@@ -1,0 +1,355 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/variables-dark";
+@import "./node_modules/bootstrap/scss/mixins";
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+$select-border-radius: 0;
+
+$yellow: #FFD326;
+$yellow-2: #978510;
+$color-limpiar-filtro: #333333;
+$card-color: #3C4146;
+$bg-color: #181D24;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger,
+  "dark": $dark,
+);
+
+$custom-colors: (
+  "bg-color": $bg-color,
+  "yellow": $yellow,
+  "yellow-2": $yellow-2,
+  "color-limpiar-filtro": $color-limpiar-filtro,
+  "card-color": $card-color
+);
+
+.languages{
+    margin-left: 3px;
+    color: #ffffff;
+}
+
+.languages:hover {
+    color: $yellow; 
+}
+
+ul.list-unstyled a {
+    @extend .text-decoration-none; 
+    color: #ffffff;
+}
+
+li {
+    @extend .list-inline-item
+}
+
+.dropdown-toggle::after {
+    color: #ffffff; 
+}
+
+
+// GLOBAL STYLES
+section {
+    margin-top: 130px;
+}
+
+a {
+    border-radius: 0px !important;
+}
+
+.circulo-container {
+    overflow: hidden;
+    transition: transform 0.3s; 
+}
+
+.circulo:hover {
+    transform: rotate(180deg) ;
+}
+
+
+// BACKGROUND HERO SECTION
+.bg-hero-section{
+    position: relative;
+    background-image: url("./imgs/slider.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    height: 800px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.bg-hero-text-left {
+    position: absolute;
+    font-size: 182px;
+    color: #ffffff;
+    font-size: 182px;
+    color: white;
+    bottom: -20%; 
+    left: 50%; 
+    transform: translateX(-70%); 
+}
+
+.img-arrow {
+    position: absolute;
+    overflow: hidden;
+    bottom: -22%; 
+    left: 25%; 
+}
+
+.hover-effect-arrow {
+    transition: transform 0.3s; 
+}
+
+.img-arrow:hover .hover-effect-arrow {
+    transform: translateY(9px); 
+}
+
+.bg-hero-text-right{
+    position: absolute;
+    font-family: 'caveat', sans-serif;
+    font-weight: 500;
+    font-size: 72px;
+    font-style: italic;
+    bottom: -14%; 
+    color: $yellow-2;
+}
+
+
+// FORMULARIO BUSQUEDA
+.form-busqueda{
+    margin-top: 13%;
+}
+
+option {
+    font-size: 14px !important;
+}
+
+.busqueda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80% !important;
+    padding: 0% !important;
+}
+
+.campo-boton{
+    width: 20% !important;
+    padding: 0% !important;
+}
+
+.form-select {
+    border-radius: 0 !important;
+    height: 54px ;
+}
+
+.input-busqueda {
+    height: 54px ;
+}
+
+.button-busqueda {
+    border-radius: 0 !important;
+    height: 54px ;
+    width: 100%;
+}
+
+
+// SECTION PROPIEDAD DEL MES
+.section-propiedad-mes {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-superpuesto{
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+}
+
+.card-month {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-property-month {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1); 
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+}
+
+.card-month-container {
+    -webkit-transition: 1s linear;
+    position: relative;
+    margin-left: -90px;
+
+    &:hover {
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+        background-color: $bg-color;
+    }
+}
+
+.card-month-container {
+    width: 250px;
+}
+
+
+// SECTION PROPIEDADES DESTACADAS
+.ver-propiedades {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 24px;
+    font-family: 'Caveat', sans-serif;
+    text-decoration: none;
+    color: $yellow-2;
+    font-weight: 700;
+}
+
+
+.card {
+    border-radius: 0px !important;
+    border: 0px !important;
+    background-color: transparent !important;
+}
+
+
+// SOBRE NOSOTROS
+.sobre-nosotros-btn:hover {
+    color: #ffffff !important;
+}
+
+
+// ULTIMAS NOTICIAS
+.ultimas-noticias{
+    position: relative;
+    writing-mode: vertical-rl; 
+    white-space: nowrap; 
+    transform: rotate(-180deg); 
+    font-size: 87px;
+    display: inline-block;
+    line-height: 1; 
+    text-align: left;
+}
+
+.ultimas-noticias > strong{
+    position: absolute;
+    font-family: 'Caveat', sans-serif;
+    display: block;
+    margin-right: -23px; 
+}
+
+.imagen-noticia {
+    position: relative;
+    overflow: hidden;
+}
+
+.caja-amarilla {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: transparent; 
+    transition: background-color 0.3s; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0; 
+        background-color: $yellow-2; 
+        transition: height 0.3s, background-color 0.3s; 
+    }
+
+    &:hover {
+        background-color: rgba(141, 125, 21, 0.9); 
+    }
+
+    &:hover::before {
+        height: 100%; 
+        background-color: transparent; 
+    }
+}
+
+
+// FOOTER 
+.contacta-nosotros {
+    position: relative;
+    font-size: 60px;
+    font-weight: 50;
+}
+
+.contacta-nosotros > strong{
+    position: absolute;
+    font-size: 60px;
+    font-family: 'Caveat', sans-serif;
+    color: #ffffff;
+    margin-top: -30px;
+    transform: translateX(130px);
+
+}
+
+.form-control {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid white !important;
+
+    &:focus {
+        outline: none !important; 
+    }
+
+    &::placeholder{
+        color: #ffffff !important;
+    }
+
+}
+
+.checkbox {
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #000 !important;
+    border-radius: 50% !important; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+
+.footer-nav > li:not(:first-child):hover {
+    background: $yellow-2;
+}
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss"
